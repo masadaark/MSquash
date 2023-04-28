@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  tata:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        APP_ENV: Development
+    environment:
+      - ECS_CONFIG={}
+    entrypoint:
+      - bash
+      - ./run.sh
+    ports:
+      - "9999:8080"
+    container_name: tata

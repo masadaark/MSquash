@@ -7,7 +7,7 @@ import (
 func main() {
 	server := gin.Default()
 	server.GET("/healthcheck", Healthcheck)
-	server.Run(":1234")
+	server.Run(":8080")
 }
 
 func Healthcheck(c *gin.Context) {
