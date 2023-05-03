@@ -1,4 +1,5 @@
-#!/bin/sh
-echo "Start"
+echo "Building..."
+go build
 
-go run server.go
+echo "Starting server..."
+./MSquash
