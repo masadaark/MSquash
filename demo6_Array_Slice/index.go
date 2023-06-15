@@ -12,7 +12,11 @@ func main() {
 	// numbers2 = append(numbers2, 1)
 	// showSlice(numbers2)
 	// subSlice()
-	addStrings("123", "456")
+	nms := []int{0, 1, 0, 3, 12}
+	moveZeroes(nms)
+	fmt.Println(nms)
+	// showSlice(numbers)
+	// addStrings("123", "456")
 }
 
 // Nofix size pointer with Array len จำนวนสมาชิก, cap จุสูงสุดได้เท่าไหร่ (list)
@@ -84,6 +88,28 @@ func addStrings(num1 string, num2 string) string {
 		}
 		result = strconv.Itoa(sum%10) + result
 		carry = sum / 10
+	}
+	return result
+}
+
+func moveZeroes(nums []int) {
+	idx := 0
+	size := len(nums)
+	for i := 0; i < size; i++ {
+		if nums[i] != 0 {
+			nums[idx] = nums[i]
+			idx++
+		}
+	}
+	for i := idx; i < size; i++ {
+		nums[i] = 0
+	}
+}
+
+func sumpArrSum(nums []int32) int32 {
+	var result int32 = 0
+	for _, v := range nums {
+		result += v
 	}
 	return result
 }
